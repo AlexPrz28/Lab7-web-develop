@@ -43,33 +43,35 @@ const ProductPreview: React.FC<ProductPreviewProps> = (props) => {
 
   return (
     <div className="productPreview">
-      <Grid container className="productGrid" spacing={2}>
-        <Grid item lg={2}>
-          <Paper className="largeImage">
-            <img src={mediumImageUrl} alt={props.product.name} />
-          </Paper>
-        </Grid>
-        <Grid item lg={10} container>
-          <Grid item lg={12}>
-            <Typography className="productName" variant="h1">
-              <Link to={`/pdp?productId=${props.product.id}`}>
+      <Link to={`/pdp?productId=${props.product.id}`}>
+        <Grid container className="productGrid" spacing={2}>
+          <Grid item lg={2}>
+            <Paper className="largeImage">
+              <img src={mediumImageUrl} alt={props.product.name} />
+            </Paper>
+          </Grid>
+          <Grid item lg={10} container>
+            <Grid item lg={12}>
+              <Typography className="productName" variant="h1">
                 {props.product.name}
-              </Link>
-            </Typography>
-          </Grid>
-          <Grid item lg={12}>
-            <Typography className="description">
-              {props.product.description}
-            </Typography>
-          </Grid>
-          <Grid item lg={2}>
-            <Typography className="dollars crossedout">{listPrice}</Typography>
-          </Grid>
-          <Grid item lg={2}>
-            <Typography className="dollars">{salePrice}</Typography>
+              </Typography>
+            </Grid>
+            <Grid item lg={12}>
+              <Typography className="description">
+                {props.product.description}
+              </Typography>
+            </Grid>
+            <Grid item lg={2}>
+              <Typography className="dollars crossedout">
+                {listPrice}
+              </Typography>
+            </Grid>
+            <Grid item lg={2}>
+              <Typography className="dollars">{salePrice}</Typography>
+            </Grid>
           </Grid>
         </Grid>
-      </Grid>
+      </Link>
     </div>
   );
 };
