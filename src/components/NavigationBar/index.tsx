@@ -22,7 +22,7 @@ const NavigationBar = () => {
           <IconButton>
             <MenuIcon />
           </IconButton>
-          <Link to="/">
+          <Link className="product-list-link" to="/">
             <Typography variant="h6" color="inherit" component="div">
               Chambasoft Store
             </Typography>
